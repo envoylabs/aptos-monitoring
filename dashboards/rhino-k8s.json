@@ -46,7 +46,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 11074,
   "graphTooltip": 1,
-  "id": 28,
+  "id": 30,
   "links": [
     {
       "$$hashKey": "object:2302",
@@ -63,6 +63,75 @@
   "liveNow": false,
   "panels": [
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto",
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 330,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "9.0.9",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "rate(aptos_consensus_current_round{role=\"validator\"}[1m]) == 0",
+          "format": "table",
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Node liveness - Node appears here if down",
+      "type": "table"
+    },
+    {
       "collapsed": false,
       "datasource": {
         "type": "datasource",
@@ -72,7 +141,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 3
       },
       "id": 199,
       "panels": [],
@@ -108,7 +177,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 1
+        "y": 4
       },
       "id": 205,
       "options": {
@@ -174,7 +243,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 1
+        "y": 4
       },
       "id": 314,
       "options": {
@@ -241,7 +310,7 @@
         "h": 4,
         "w": 5,
         "x": 8,
-        "y": 1
+        "y": 4
       },
       "id": 211,
       "options": {
@@ -321,7 +390,7 @@
         "h": 4,
         "w": 2,
         "x": 13,
-        "y": 1
+        "y": 4
       },
       "id": 201,
       "options": {
@@ -397,7 +466,7 @@
         "h": 4,
         "w": 3,
         "x": 15,
-        "y": 1
+        "y": 4
       },
       "id": 203,
       "options": {
@@ -462,7 +531,7 @@
         "h": 4,
         "w": 3,
         "x": 18,
-        "y": 1
+        "y": 4
       },
       "id": 207,
       "options": {
@@ -543,7 +612,7 @@
         "h": 4,
         "w": 3,
         "x": 21,
-        "y": 1
+        "y": 4
       },
       "id": 328,
       "options": {
@@ -619,7 +688,7 @@
         "h": 3,
         "w": 2,
         "x": 0,
-        "y": 5
+        "y": 8
       },
       "id": 326,
       "options": {
@@ -685,7 +754,7 @@
         "h": 3,
         "w": 6,
         "x": 2,
-        "y": 5
+        "y": 8
       },
       "id": 315,
       "options": {
@@ -801,7 +870,7 @@
         "h": 3,
         "w": 2,
         "x": 8,
-        "y": 5
+        "y": 8
       },
       "id": 327,
       "options": {
@@ -875,7 +944,7 @@
         "h": 3,
         "w": 6,
         "x": 10,
-        "y": 5
+        "y": 8
       },
       "id": 324,
       "options": {
@@ -988,7 +1057,7 @@
         "h": 3,
         "w": 3,
         "x": 16,
-        "y": 5
+        "y": 8
       },
       "id": 325,
       "options": {
@@ -1083,7 +1152,7 @@
         "h": 3,
         "w": 2,
         "x": 19,
-        "y": 5
+        "y": 8
       },
       "id": 321,
       "options": {
@@ -1152,7 +1221,7 @@
         "h": 3,
         "w": 3,
         "x": 21,
-        "y": 5
+        "y": 8
       },
       "id": 308,
       "options": {
@@ -1192,7 +1261,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 11
       },
       "id": 323,
       "panels": [],
@@ -1284,7 +1353,7 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 9
+        "y": 12
       },
       "id": 213,
       "options": {
@@ -1435,7 +1504,7 @@
         "h": 9,
         "w": 6,
         "x": 6,
-        "y": 9
+        "y": 12
       },
       "id": 320,
       "options": {
@@ -1634,7 +1703,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 9
+        "y": 12
       },
       "id": 278,
       "options": {
@@ -1814,7 +1883,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 21
       },
       "id": 317,
       "interval": "30s",
@@ -2024,7 +2093,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 19
+        "y": 22
       },
       "id": 209,
       "interval": "30s",
@@ -2137,8 +2206,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2154,7 +2222,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 27
+        "y": 30
       },
       "id": 221,
       "options": {
@@ -2235,8 +2303,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -2248,7 +2315,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 28
+        "y": 31
       },
       "id": 217,
       "options": {
@@ -2331,8 +2398,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -2377,7 +2443,7 @@
         "h": 9,
         "w": 20,
         "x": 0,
-        "y": 34
+        "y": 37
       },
       "id": 219,
       "options": {
@@ -2459,8 +2525,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue",
-                "value": null
+                "color": "blue"
               }
             ]
           },
@@ -2472,7 +2537,7 @@
         "h": 9,
         "w": 4,
         "x": 20,
-        "y": 34
+        "y": 37
       },
       "id": 319,
       "options": {
@@ -2596,8 +2661,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -2624,7 +2688,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 46
       },
       "id": 306,
       "options": {
@@ -2676,8 +2740,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -2689,7 +2752,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 53
       },
       "id": 284,
       "options": {
@@ -2746,8 +2809,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -2759,7 +2821,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 53
       },
       "id": 316,
       "options": {
@@ -2921,6 +2983,6 @@
   "timezone": "browser",
   "title": "Aptos Validator Monitoring",
   "uid": "bz8kPr673",
-  "version": 5,
+  "version": 2,
   "weekStart": ""
 }
